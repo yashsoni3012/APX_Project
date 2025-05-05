@@ -1,7 +1,4 @@
-import React, { useEffect } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-
+import React from 'react';
 import blueberryImg from '../../assets/blueberry.png';
 import strawberryImg from '../../assets/strawberry.png';
 import raspberryImg from '../../assets/raspberry.png';
@@ -69,13 +66,6 @@ const NFT_Barries_Cards = ({ isImageOnLeft = true, imageUrl, title }) => {
 };
 
 const NFT_Barries_Cards_List = () => {
-    useEffect(() => {
-        AOS.init({
-            duration: 1000,
-            once: true,
-        });
-    }, []);
-
     const images = [
         blueberryImg,
         strawberryImg,
@@ -97,11 +87,11 @@ const NFT_Barries_Cards_List = () => {
     return (
         <div className="space-y-8">
             {images.map((img, i) => (
-                <div key={i} className="mb-8" data-aos="slide-up">
+                <div key={i} className="mb-8">
                     <NFT_Barries_Cards
                         isImageOnLeft={i % 2 === 0}
                         imageUrl={img}
-                        title={titles[i]}
+                        title={titles[i]} // Pass the title for each image
                     />
                 </div>
             ))}
