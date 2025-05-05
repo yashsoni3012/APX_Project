@@ -48,7 +48,7 @@ const NFT_Barries_Cards = ({ isImageOnLeft = true, imageUrl, title }) => {
                     </p>
                     <div className="flex justify-left w-full">
                         <button className="bg-black text-white px-30 sm:px-30 md:px-30 py-2 rounded-md w-full sm:w-auto hover:bg-gray-900 transition">
-                            Buy No
+                            Buy Now
                         </button>
                     </div>
                 </div>
