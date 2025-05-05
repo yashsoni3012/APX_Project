@@ -13,7 +13,7 @@ const Service_banner = () => {
             />
 
             {/* Overlay Content */}
-            <div className="absolute inset-0 bg-black/50 flex items-center">
+            <div className="absolute inset-0 bg-black/30 flex items-center">
                 <div className="px-4 sm:px-8 lg:px-16">
                     <div className="text-white max-w-xl">
                         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">

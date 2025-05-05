@@ -11,7 +11,7 @@ const Story_Started = () => {
                 <div>
                     <h6 className="text-green-700 text-sm md:text-base mb-2">Our story</h6>
                     <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-4">How it started?</h2>
-                    <p className="text-gray-600 text-sm sm:text-base leading-relaxed italic font-semibold">
+                    <p className="text-gray-600 text-sm sm:text-base leading-relaxed italic font-semibold text-justify">
                         Our mission is to revolutionize urban farming with blockchain-powered solutions, ensuring transparency,
                         efficiency, and sustainability. By integrating smart contracts, tokenized assets, and NFT-based ownership,
                         we empower communities with secure, data-driven agricultural practices. This fosters eco-friendly food

@@ -39,14 +39,19 @@ const APX = () => {
                 </div>
 
                 {/* Token Purchase Box */}
-                <div className="w-full max-w-3xl border border-green-500 rounded-md p-6 flex flex-row items-center justify-between gap-6 mb-8 bg-[#111] flex-wrap sm:flex-nowrap">
-                    <img
-                        src={logoImg}
-                        alt="Token"
-                        className="w-24 h-24 object-contain"
-                    />
-                    <div className="flex items-center gap-4">
-                        <div className="border border-green-500 rounded-md px-4 py-2 bg-[#222] text-sm">
+                <div className="w-full max-w-3xl border border-green-500 rounded-md p-6 flex flex-col sm:flex-row items-center justify-between gap-6 mb-8 bg-[#111]">
+                    {/* Image */}
+                    <div className="w-full sm:w-auto flex justify-center mb-4 sm:mb-0">
+                        <img
+                            src={logoImg}
+                            alt="Token"
+                            className="w-24 h-24 object-contain"
+                        />
+                    </div>
+
+                    {/* Price and Button */}
+                    <div className="flex items-center gap-4 w-full sm:w-auto justify-between">
+                        <div className="border border-green-500 rounded-md px-4 py-2 bg-[#222] text-sm text-center">
                             1 = 0.002 APX
                         </div>
                         <button
@@ -57,6 +62,9 @@ const APX = () => {
                         </button>
                     </div>
                 </div>
+
+
+
 
                 {/* CTA Button */}
                 <button className="bg-green-600 hover:bg-green-700 transition text-white font-bold py-3 px-8 rounded-md">

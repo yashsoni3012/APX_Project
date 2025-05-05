@@ -10,7 +10,7 @@ const MissionVisionSection = () => {
                 <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4">Full-scale urban farm<br /> network deployment.</h2>
 
                 <img src={logo} alt="Mission Logo" className="w-20 h-auto mb-4" />
-                <p className="text-sm md:text-base text-left max-w-md italic">
+                <p className="text-sm md:text-base max-w-md italic text-justify">
                     By integrating smart contracts, tokenized assets, and NFT-based ownership, we empower communities with secure, data-driven agricultural practices.
                 </p>
             </div>
@@ -21,7 +21,7 @@ const MissionVisionSection = () => {
                 <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4">Blockchain-powered sustainable <br />urban farming.</h2>
 
                 <img src={logo} alt="Vision Logo" className="w-20 h-auto mb-4" />
-                <p className="text-sm md:text-base text-left max-w-md italic">
+                <p className="text-sm md:text-base text-justify max-w-md italic">
                     By integrating smart contracts, tokenized assets, and NFT-based ownership, we empower communities with secure, data-driven agricultural practices.
                 </p>
             </div>

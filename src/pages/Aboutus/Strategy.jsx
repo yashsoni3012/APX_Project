@@ -12,7 +12,7 @@ const TwoColumnLayout = () => {
                     <p className="text-black text-sm sm:text-base leading-relaxed font-semibold mb-2">
                         Our system operates in three key steps:
                     </p>
-                    <p className="text-black text-sm sm:text-base leading-relaxed font-semibold space-y-2">
+                    <p className="text-black text-sm sm:text-base leading-relaxed font-semibold space-y-2 text-justify">
                         1. Investment - Users invest through blockchain-powered tokenization, securing fractional ownership in urban farms.<br />
                         2. Farming - Smart automation optimizes crop growth, ensuring sustainability and efficiency.<br />
                         3. Rewards - Investors earn through yields, carbon credits, and token incentives sustainably.

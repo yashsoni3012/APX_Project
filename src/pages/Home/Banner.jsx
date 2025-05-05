@@ -13,27 +13,26 @@ const Banner = () => {
             />
 
             {/* Overlay Content */}
-            <div className="absolute inset-0 bg-black/40 flex items-center">
-                <div className="container mx-auto px-4 sm:px-8 lg:px-16">
-                    <div className="text-white max-w-xl">
-                        <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold mb-4">
+            <div className="absolute inset-0 bg-black/30 flex items-center">
+                <div className="max-w-8xl mx-auto w-full px-4 sm:px-8 lg:px-16">
+                    {/* Text Section */}
+                    <div className="text-white w-full">
+                        <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold mb-4 max-w-8xl mx-auto">
                             AI-Powered Farming
                         </h1>
-                        <p className="text-base sm:text-lg md:text-xl mb-6">
+                        <p className="text-base sm:text-lg md:text-xl mb-10 max-w-8xl mx-auto">
                             Smart climate control, automated systems.
                         </p>
                         <Link
-                            to
+                            to="/contact"
                             className="bg-green-600 text-white px-6 py-3 rounded-md hover:bg-green-700 transition"
                         >
                             Contact Us
                         </Link>
-
                     </div>
                 </div>
             </div>
         </div>
-
     );
 };
 

@@ -26,21 +26,25 @@ const CardSection = () => {
     ];
 
     return (
-        <div className="  lg:px-20 py-12 bg-white">
-            <div className='max-w-7xl text-start mb-10'>
-                <h6 className='text-green-700 italic text-sm md:text-base'>Services</h6>
-                <h3 className='text-black text-2xl md:text-3xl font-semibold mt-2'>Technology & Implementation</h3>
+        <div className="px-4 sm:px-6 lg:px-20 py-12 bg-white">
+            <div className="max-w-7xl mx-auto text-start mb-10">
+                <h6 className="text-green-700 italic text-sm md:text-base">Services</h6>
+                <h3 className="text-black text-2xl md:text-3xl font-semibold mt-2">Technology & Implementation</h3>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            {/* Responsive card grid */}
+            <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 {cards.map((card, index) => (
-                    <div key={index} className="bg-white rounded-2xl shadow-md overflow-hidden flex flex-col max-w-7xl">
-                        <img
-                            src={card.image}
-                            alt={card.title}
-                            className="w-full h-[200px] object-cover rounded-t-2xl"
-                        />
+                    <div key={index} className="bg-white rounded-2xl shadow-md overflow-hidden flex flex-col">
+                        <div className="w-full aspect-[16/9] overflow-hidden">
+                            <img
+                                src={card.image}
+                                alt={card.title}
+                                className="w-full h-full object-cover"
+                            />
+                        </div>
                         <div className="p-5 flex flex-col flex-1">
-                            <h3 className="text-xl font-bold mb-2">{card.title}</h3>
+                            <h3 className="text-lg sm:text-xl font-bold mb-2">{card.title}</h3>
                             <p className="text-sm text-gray-800 mb-4">{card.description}</p>
                             <a href={card.link} className="text-green-600 font-semibold hover:underline mt-auto">
                                 Read More →

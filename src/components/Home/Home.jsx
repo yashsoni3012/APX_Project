@@ -20,7 +20,7 @@ const Home = () => {
       <Tokenomics/>
       <Impact/>
       <ContactUs/>
-      {/* <Footer/> */}
+      {/* <Footer/> */} 
     </div>
   )
 }
