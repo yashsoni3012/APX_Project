@@ -24,7 +24,7 @@ const Banner = () => {
                             Smart climate control, automated systems.
                         </p>
                         <Link
-                            to="/contact"
+                            to="    "
                             className="bg-green-600 text-white px-6 py-3 rounded-md hover:bg-green-700 transition"
                         >
                             Contact Us

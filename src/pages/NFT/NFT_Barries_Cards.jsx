@@ -37,7 +37,7 @@ const NFT_Barries_Cards = ({ isImageOnLeft = true, imageUrl, title }) => {
           />
         </div>
       ) : (
-        <div className="bg-black text-white p-6 sm:p-8 md:p-10 lg:p-12 flex flex-col justify-center h-[400px] md:h-[500px] pl-6 sm:pl-8 md:pl-12 z-0 rounded-l-3xl w-full md:w-[110%]">
+        <div className="max-w-7xl mx-auto bg-black text-white p-6 sm:p-8 md:p-10 lg:p-12 flex flex-col justify-center h-[400px] md:h-[500px] pl-6 sm:pl-8 md:pl-12 z-0 rounded-l-3xl w-full md:w-[110%]">
           <h3 className="text-xs sm:text-sm font-semibold mb-4 sm:mb-6 text-left text-green-600">AI FUTURE</h3>
           <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-4 sm:mb-6 text-left">
             {title}
@@ -46,17 +46,18 @@ const NFT_Barries_Cards = ({ isImageOnLeft = true, imageUrl, title }) => {
             Data-driven farming uses AI and analytics to optimize crop production, reduce waste, and enhance sustainability—transforming smart agricultural practices into measurable, real-world financial returns.
           </p>
           <div className="flex justify-left w-full">
-            <button className="bg-green-600 text-white px-6 py-2 rounded-md w-full sm:w-auto hover:bg-green-700 transition">
+            <button className="bg-green-600 text-white px-20 py-2 rounded-md w-full sm:w-auto hover:bg-green-700 transition">
               Buy Now
             </button>
           </div>
         </div>
+
       )}
 
       {/* Right Column */}
       {isImageOnLeft ? (
-        <div className="bg-green-600 text-white w-full md:min-w-[105%] -ml-4 sm:-ml-8 md:-ml-[5%] p-6 sm:p-8 md:p-10 lg:p-12 flex flex-col justify-center h-[400px] md:h-[500px] pl-6 sm:pl-8 md:pl-12 z-0 rounded-r-3xl">
-          <h3 className="text-xs sm:text-sm font-semibold mb-4 sm:mb-6 text-left text-black">AI FUTURE</h3>
+        <div className="max-w-7xl mx-auto bg-green-600 text-white p-6 sm:p-8 md:p-10 lg:p-12 flex flex-col justify-center h-[400px] md:h-[500px] pl-6 sm:pl-8 md:pl-12 z-0 rounded-l-3xl w-full md:w-full">
+          <h3 className="text-xs sm:text-sm font-semibold mb-4 sm:mb-6 text-left text-green-600">AI FUTURE</h3>
           <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-4 sm:mb-6 text-left">
             {title}
           </h2>
@@ -64,7 +65,7 @@ const NFT_Barries_Cards = ({ isImageOnLeft = true, imageUrl, title }) => {
             Data-driven farming uses AI and analytics to optimize crop production, reduce waste, and enhance sustainability—transforming smart agricultural practices into measurable, real-world financial returns.
           </p>
           <div className="flex justify-left w-full">
-            <button className="bg-black text-white px-6 py-2 rounded-md w-full sm:w-auto hover:bg-gray-900 transition">
+            <button className="bg-black text-white px-20 py-2 rounded-md w-full sm:w-auto hover:bg-gray-900 transition">
               Buy Now
             </button>
           </div>

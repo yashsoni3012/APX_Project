@@ -46,11 +46,25 @@ const Nft = () => {
       </motion.div>
 
       <motion.div
-        custom={2}
+        custom={2} // Control the timing and animation delay here
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
-        variants={matureFadeVariant}
+        variants={{
+          hidden: {
+            opacity: 0,
+            y: 20,
+          },
+          visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+              delay: 0, // Immediately show the cards once scrolled to
+              duration: 0.4, // Faster animation
+              ease: 'easeOut',
+            },
+          },
+        }}
       >
         <NFT_Barries_Cards />
       </motion.div>

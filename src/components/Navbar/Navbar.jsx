@@ -52,20 +52,44 @@ const Navbar = () => {
             {/* Offcanvas Sidebar */}
             <div className={`fixed inset-0 z-40 md:hidden transition-transform duration-300 ${isOpen ? 'translate-x-0' : 'translate-x-full'} transform`}>
                 {/* Overlay */}
-                <div className="fixed inset-0 bg-black/50" onClick={closeMenu}></div>
+                <div className="fixed inset-0 bg-black/30" onClick={closeMenu}></div>
 
-                {/* Sidebar Panel */}
-                <div className="absolute top-0 right-0 h-full w-64 bg-gray-900 shadow-lg p-6 space-y-6">
-                    <Link to="/apx_token" onClick={closeMenu} className="block text-white hover:text-green-400">APX Token</Link>
-                    <Link to="/nft" onClick={closeMenu} className="block text-white hover:text-green-400">NFT</Link>
-                    <Link to="/services" onClick={closeMenu} className="block text-white hover:text-green-400">Services</Link>
-                    <Link to="/insights" onClick={closeMenu} className="block text-white hover:text-green-400">Insights</Link>
-                    <Link to="/aboutus" onClick={closeMenu} className="block text-white hover:text-green-400">About Us</Link>
-                    <Link to="/" onClick={closeMenu} className="block bg-green-600 text-white text-center py-2 rounded-md hover:bg-green-700 transition">
-                        Contact Us
-                    </Link>
+                {/* Sidebar Panel - Full Width */}
+                <div className="absolute top-0 right-0 h-full w-full bg-gray-900 shadow-lg p-7 space-y-6 overflow-y-auto">
+
+                    {/* Close Button */}
+                    <button
+                        onClick={closeMenu}
+                        className="absolute top-4 left-4 text-white text-2xl font-bold focus:outline-none"
+                    >
+                        &times;
+                    </button>
+
+                    {/* Navigation Links */}
+                    <div className="mt-10 flex flex-col items-start space-y-4 w-full">
+                        <Link to="/apx_token" onClick={closeMenu} className="text-white text-lg hover:text-green-400">APX Token</Link>
+                        <hr className="border-t border-white w-full" />
+
+                        <Link to="/nft" onClick={closeMenu} className="text-white text-lg hover:text-green-400">NFT</Link>
+                        <hr className="border-t border-white w-full" />
+
+                        <Link to="/services" onClick={closeMenu} className="text-white text-lg hover:text-green-400">Services</Link>
+                        <hr className="border-t border-white w-full" />
+
+                        <Link to="/insights" onClick={closeMenu} className="text-white text-lg hover:text-green-400">Insights</Link>
+                        <hr className="border-t border-white w-full" />
+
+                        <Link to="/aboutus" onClick={closeMenu} className="text-white text-lg hover:text-green-400">About Us</Link>
+                        <hr className="border-t border-white w-full" />
+
+                        <Link to="/" onClick={closeMenu} className="bg-green-600 text-white text-center w-full py-2 mt-10 rounded-md hover:bg-green-700 transition">
+                            Contact Us
+                        </Link>
+                    </div>
+
                 </div>
             </div>
+
         </nav>
     );
 };
