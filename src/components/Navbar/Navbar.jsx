@@ -82,7 +82,7 @@ const Navbar = () => {
                         <Link to="/aboutus" onClick={closeMenu} className="text-white text-lg hover:text-green-400">About Us</Link>
                         <hr className="border-t border-white w-full" />
 
-                        <Link to="/" onClick={closeMenu} className="bg-green-600 text-white text-center w-full py-2 mt-10 rounded-md hover:bg-green-700 transition">
+                        <Link to="" onClick={closeMenu} className="bg-green-600 text-white text-center w-full py-2 mt-10 rounded-md hover:bg-green-700 transition">
                             Contact Us
                         </Link>
                     </div>

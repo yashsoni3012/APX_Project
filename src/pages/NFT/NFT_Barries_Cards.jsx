@@ -7,18 +7,18 @@ import blackberryImg from '../../assets/blackberry.png';
 import goldenberryImg from '../../assets/golden_berry.png';
 import mulberryImg from '../../assets/mulberry.png';
 
-// Animation variant
+// Updated animation variant
 const matureFadeVariant = {
   hidden: {
     opacity: 0,
-    y: 20,
+    y: 50,
   },
   visible: (i) => ({
     opacity: 1,
     y: 0,
     transition: {
       delay: i * 0.1,
-      duration: 0.5,
+      duration: 0.6,
       ease: 'easeOut',
     },
   }),
@@ -51,7 +51,6 @@ const NFT_Barries_Cards = ({ isImageOnLeft = true, imageUrl, title }) => {
             </button>
           </div>
         </div>
-
       )}
 
       {/* Right Column */}
@@ -110,8 +109,8 @@ const NFT_Barries_Cards_List = () => {
           custom={i}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
           variants={matureFadeVariant}
+          viewport={{ once: false, amount: 0.1 }} // Trigger when 10% is in view
         >
           <NFT_Barries_Cards
             isImageOnLeft={i % 2 === 0}
