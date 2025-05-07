@@ -14,7 +14,7 @@ const Ai_Future = () => {
                         Data-Driven Farming. <br />Real-World Profits.
                     </h2>
                     
-                    <p className="text-white text-sm sm:text-base leading-relaxed font-semibold mb-4">
+                    <p className="text-white text-sm sm:text-base leading-relaxed font-semibold mb-4 text-justify">
                         Data-driven farming uses AI and analytics to optimize crop production, reduce waste, and enhance sustainability—transforming smart agricultural practices into measurable, real-world financial returns.
                     </p>
 

@@ -51,7 +51,7 @@ const Ai_Services = () => {
                             <h3 className="text-lg font-semibold mb-2 text-green-600">
                                 {card.title}
                             </h3>
-                            <p className="text-sm text-gray-800">{card.description}</p>
+                            <p className="text-sm text-justify text-gray-800">{card.description}</p>
                         </div>
                     </div>
                 ))}

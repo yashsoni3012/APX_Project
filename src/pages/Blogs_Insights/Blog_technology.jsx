@@ -59,7 +59,7 @@ const Ai_Services = () => {
               <h3 className="text-xl font-semibold mb-2 text-black">
                 {card.title}
               </h3>
-              <p className="text-sm text-gray-800 mb-4">{card.description}</p>
+              <p className="text-sm text-gray-800 mb-4 text-justify">{card.description}</p>
               <a
                 href={card.link}
                 className="text-green-700 text-sm font-semibold hover:underline mt-auto"

@@ -18,8 +18,18 @@ const Banner = () => {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
-    fade: true,
-    arrows: false, // Optional: Remove arrows if you don't want navigation buttons
+    fade: false, // Change fade to false for visible sliding transition
+    arrows: true, // Enable arrows for navigation
+    prevArrow: (
+      <button className="slick-prev slick-arrow">
+        <span className="text-white text-4xl">&#10094;</span> {/* Left arrow */}
+      </button>
+    ),
+    nextArrow: (
+      <button className="slick-next slick-arrow">
+        <span className="text-white text-4xl">&#10095;</span> {/* Right arrow */}
+      </button>
+    ),
   };
 
   return (
@@ -42,7 +52,7 @@ const Banner = () => {
                 Smart climate control, automated systems.
               </p>
               <Link
-                to // Update the link to your contact page
+                to="/contact" // Update the link to your contact page
                 className="bg-green-600 text-white px-6 py-3 rounded-md hover:bg-green-700 transition"
               >
                 Contact Us
@@ -67,7 +77,7 @@ const Banner = () => {
                 Harness data and technology to optimize yields.
               </p>
               <Link
-                to  // Update the link to your desired page
+                to="/learn-more" // Update the link to your desired page
                 className="bg-green-600 text-white px-6 py-3 rounded-md hover:bg-green-700 transition"
               >
                 Learn More
@@ -92,7 +102,7 @@ const Banner = () => {
                 Reduce waste and maximize efficiency with AI.
               </p>
               <Link
-                to  // Update the link as needed
+                to="/get-started" // Update the link as needed
                 className="bg-green-600 text-white px-6 py-3 rounded-md hover:bg-green-700 transition"
               >
                 Get Started
