@@ -7,82 +7,89 @@ import Strategy from '../../pages/Aboutus/Strategy';
 import Comparison from '../../pages/Aboutus/Comparison';
 import ContactUs from '../../pages/Home/ContactUs';
 
-// Animation variant
-const matureFadeVariant = {
-  hidden: {
-    opacity: 0,
-    y: 20,
-  },
-  visible: (i) => ({
+// Fade in with vertical movement
+const fadeVariant = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
     opacity: 1,
     y: 0,
-    transition: {
-      delay: i * 0.1,
-      duration: 0.5,
-      ease: 'easeOut',
-    },
-  }),
+    transition: { duration: 0.4, ease: 'easeOut' },
+  },
+};
+
+// Slide in from left to right
+const slideFromLeft = {
+  hidden: { opacity: 0, x: -50 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.5, ease: 'easeOut' },
+  },
+};
+
+// Slide in from right to left
+const slideFromRight = {
+  hidden: { opacity: 0, x: 50 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.5, ease: 'easeOut' },
+  },
 };
 
 const AboutUs = () => {
   return (
     <div className="space-y-10">
       <motion.div
-        custom={0}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
-        variants={matureFadeVariant}
+        variants={fadeVariant}
       >
         <About_Banner />
       </motion.div>
 
       <motion.div
-        custom={1}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
-        variants={matureFadeVariant}
+        variants={fadeVariant}
       >
         <Story_Started />
       </motion.div>
 
       <motion.div
-        custom={2}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
-        variants={matureFadeVariant}
+        variants={slideFromLeft} // Animate from left to right
       >
         <Vision_mission />
       </motion.div>
 
       <motion.div
-        custom={3}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
-        variants={matureFadeVariant}
+        variants={slideFromRight} // Animate from right to left
       >
         <Strategy />
       </motion.div>
 
       <motion.div
-        custom={4}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
-        variants={matureFadeVariant}
+        variants={fadeVariant}
       >
         <Comparison />
       </motion.div>
 
       <motion.div
-        custom={5}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
-        variants={matureFadeVariant}
+        variants={fadeVariant}
       >
         <ContactUs />
       </motion.div>

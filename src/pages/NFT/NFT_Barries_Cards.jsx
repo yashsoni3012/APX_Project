@@ -7,120 +7,102 @@ import blackberryImg from '../../assets/blackberry.png';
 import goldenberryImg from '../../assets/golden_berry.png';
 import mulberryImg from '../../assets/mulberry.png';
 
-// Updated animation variant
-const matureFadeVariant = {
-  hidden: {
-    opacity: 0,
-    y: 50,
-  },
-  visible: (i) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: i * 0.1,
-      duration: 0.6,
-      ease: 'easeOut',
+const App = () => {
+  const sections = [
+    {
+      background: 'bg-green-600',
+      title: 'Blueberry',
+      text: 'Data-driven farming uses AI and analytics to optimize crop production, reduce waste, and enhance sustainability—transforming smart agricultural practices into measurable, real-world financial returns.',
+      image: blueberryImg,
     },
-  }),
-};
+    {
+      background: 'bg-black',
+      title: 'Strawberry',
+      text: 'Data-driven farming uses AI and analytics to optimize crop production, reduce waste, and enhance sustainability—transforming smart agricultural practices into measurable, real-world financial returns.',
+      image: strawberryImg,
+    },
+    {
+      background: 'bg-green-600',
+      title: 'Raspberry',
+      text: 'Data-driven farming uses AI and analytics to optimize crop production, reduce waste, and enhance sustainability—transforming smart agricultural practices into measurable, real-world financial returns.',
+      image: raspberryImg,
+    },
+    {
+      background: 'bg-black',
+      title: 'Blackberry',
+      text: 'Data-driven farming uses AI and analytics to optimize crop production, reduce waste, and enhance sustainability—transforming smart agricultural practices into measurable, real-world financial returns.',
+      image: blackberryImg,
+    },
+    {
+      background: 'bg-green-600',
+      title: 'Goldenberry',
+      text: 'Data-driven farming uses AI and analytics to optimize crop production, reduce waste, and enhance sustainability—transforming smart agricultural practices into measurable, real-world financial returns.',
+      image: goldenberryImg,
+    },
+    {
+      background: 'bg-black',
+      title: 'Mulberry',
+      text: 'Data-driven farming uses AI and analytics to optimize crop production, reduce waste, and enhance sustainability—transforming smart agricultural practices into measurable, real-world financial returns.',
+      image: mulberryImg,
+    },
+  ];
 
-const NFT_Barries_Cards = ({ isImageOnLeft = true, imageUrl, title }) => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-0 w-full relative overflow-visible">
-      {/* Left Column */}
-      {isImageOnLeft ? (
-        <div className="relative z-10 h-[300px] sm:h-[400px] md:h-[500px] overflow-hidden rounded-r-3xl">
-          <img
-            src={imageUrl}
-            alt="NFT Visual"
-            className="w-full h-full object-cover rounded-3xl"
-          />
-        </div>
-      ) : (
-        <div className="max-w-7xl mx-auto bg-black text-white p-6 sm:p-8 md:p-10 lg:p-12 flex flex-col justify-center h-[400px] md:h-[500px] pl-6 sm:pl-8 md:pl-12 z-0 rounded-l-3xl w-full md:w-[110%]">
-          <h3 className="text-xs sm:text-sm font-semibold mb-4 sm:mb-6 text-left text-green-600">AI FUTURE</h3>
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-4 sm:mb-6 text-left">
-            {title}
-          </h2>
-          <p className="text-sm sm:text-base text-left max-w-md italic mb-6 sm:mb-8">
-            Data-driven farming uses AI and analytics to optimize crop production, reduce waste, and enhance sustainability—transforming smart agricultural practices into measurable, real-world financial returns.
-          </p>
-          <div className="flex justify-left w-full">
-            <button className="bg-green-600 text-white px-20 py-2 rounded-md w-full sm:w-auto hover:bg-green-700 transition">
-              Buy Now
-            </button>
-          </div>
-        </div>
-      )}
+    <div className="space-y-6">
+      {sections.map((section, index) => {
+        const layoutClass = index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse';
 
-      {/* Right Column */}
-      {isImageOnLeft ? (
-        <div className="max-w-7xl mx-auto bg-green-600 text-white p-6 sm:p-8 md:p-10 lg:p-12 flex flex-col justify-center h-[400px] md:h-[500px] pl-6 sm:pl-8 md:pl-12 z-0 rounded-l-3xl w-full md:w-full">
-          <h3 className="text-xs sm:text-sm font-semibold mb-4 sm:mb-6 text-left text-green-600">AI FUTURE</h3>
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-4 sm:mb-6 text-left">
-            {title}
-          </h2>
-          <p className="text-sm sm:text-base text-left max-w-md italic mb-6 sm:mb-8">
-            Data-driven farming uses AI and analytics to optimize crop production, reduce waste, and enhance sustainability—transforming smart agricultural practices into measurable, real-world financial returns.
-          </p>
-          <div className="flex justify-left w-full">
-            <button className="bg-black text-white px-20 py-2 rounded-md w-full sm:w-auto hover:bg-gray-900 transition">
-              Buy Now
-            </button>
-          </div>
-        </div>
-      ) : (
-        <div className="relative z-10 h-[300px] sm:h-[400px] md:h-[500px] overflow-hidden rounded-r-3xl">
-          <img
-            src={imageUrl}
-            alt="NFT Visual"
-            className="w-full h-full object-cover rounded-3xl"
-          />
-        </div>
-      )}
+        // Determine button style based on background
+        const isGreen = section.background.includes('green');
+        const buttonClass = isGreen
+          ? 'bg-black hover:bg-gray-800 text-white py-3 px-6 min-w-[300px] rounded-lg'
+          : 'bg-green-600 hover:bg-green-700 text-white py-3 px-6 min-w-[300px] rounded-lg';
+
+        // Set animation properties based on section index
+        const motionProps = {
+          initial: { opacity: 0, x: index % 2 === 0 ? -100 : 100 }, // Slide from left or right
+          whileInView: { opacity: 1, x: 0 }, // Fade in and reset position
+          transition: { type: 'spring', stiffness: 100, duration: 0.8 }, // Transition settings
+          viewport: { once: true, amount: 0.2 }, // Trigger when 20% of the element is visible
+        };
+
+        return (
+          <motion.div
+            key={index}
+            className={`w-full flex flex-col ${layoutClass} items-center ${section.background} rounded-3xl text-white`}
+            {...motionProps}
+          >
+            {/* Image Section */}
+            <div className="w-full h-64 md:w-1/2 md:h-[400px]">
+              <img
+                src={section.image}
+                alt={`Image for ${section.title}`}
+                className="w-full h-full object-cover rounded-3xl"
+              />
+            </div>
+
+            {/* Text Section */}
+            <div className="w-full md:w-1/2 flex flex-col justify-center items-center p-4 sm:p-6 space-y-4 text-center">
+              <p className="text-xs font-semibold tracking-widest uppercase text-white  w-full sm:text-start max-w-7xl">
+                AI FUTURE
+              </p>
+
+              <h2 className="text-2xl sm:text-3xl font-bold">{section.title}</h2>
+              <p className="text-sm w-full text-justify sm:text-start md:w-11/12 lg:w-9/12 xl:w-8/12">
+                {section.text}
+              </p>
+
+              <button
+                className={`${buttonClass} w-full sm:w-1/2 md:w-auto px-6 py-2 rounded-lg text-sm font-semibold transition`}
+              >
+                Buy Now
+              </button>
+            </div>
+          </motion.div>
+        );
+      })}
     </div>
   );
 };
 
-const NFT_Barries_Cards_List = () => {
-  const images = [
-    blueberryImg,
-    strawberryImg,
-    raspberryImg,
-    blackberryImg,
-    goldenberryImg,
-    mulberryImg,
-  ];
-
-  const titles = [
-    "Blueberries",
-    "Strawberries",
-    "Raspberries",
-    "Blackberries",
-    "Golden Berries",
-    "Mulberries",
-  ];
-
-  return (
-    <div className="space-y-8">
-      {images.map((img, i) => (
-        <motion.div
-          key={i}
-          custom={i}
-          initial="hidden"
-          whileInView="visible"
-          variants={matureFadeVariant}
-          viewport={{ once: false, amount: 0.1 }} // Trigger when 10% is in view
-        >
-          <NFT_Barries_Cards
-            isImageOnLeft={i % 2 === 0}
-            imageUrl={img}
-            title={titles[i]}
-          />
-        </motion.div>
-      ))}
-    </div>
-  );
-};
-
-export default NFT_Barries_Cards_List;
+export default App;

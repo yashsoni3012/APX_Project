@@ -7,22 +7,43 @@ import Blog_Resources from '../../pages/Services/Blog_Resources';
 import FAQ from '../../pages/Services/FAQ';
 import ContactUs from '../../pages/Home/ContactUs';
 
-// Animation variant
-const matureFadeVariant = {
-  hidden: {
-    opacity: 0,
-    y: 20,
-  },
-  visible: (i) => ({
+// Animation variants
+const fadeVariant = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
     opacity: 1,
     y: 0,
-    transition: {
-      delay: i * 0.1,
-      duration: 0.5,
-      ease: 'easeOut',
-    },
-  }),
-};
+    transition: { duration: 0.4, ease: 'easeOut' },
+  },
+}
+
+const slideLeftVariant = {
+  hidden: { opacity: 0, x: -30 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.4, ease: 'easeOut' },
+  },
+}
+
+const slideRightVariant = {
+  hidden: { opacity: 0, x: 30 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.4, ease: 'easeOut' },
+  },
+}
+
+// New scale variant for FAQ
+const scaleVariant = {
+  hidden: { opacity: 0, scale: 0.8 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 0.4, ease: 'easeOut' },
+  },
+}
 
 const Services = () => {
   return (
@@ -32,7 +53,7 @@ const Services = () => {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
-        variants={matureFadeVariant}
+        variants={fadeVariant}
       >
         <Service_banner />
       </motion.div>
@@ -42,7 +63,7 @@ const Services = () => {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
-        variants={matureFadeVariant}
+        variants={slideLeftVariant} // Slide left for Ai_Services
       >
         <Ai_Services />
       </motion.div>
@@ -52,7 +73,7 @@ const Services = () => {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
-        variants={matureFadeVariant}
+        variants={slideRightVariant} // Slide right for Ai_Future
       >
         <Ai_Future />
       </motion.div>
@@ -62,7 +83,7 @@ const Services = () => {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
-        variants={matureFadeVariant}
+        variants={fadeVariant}
       >
         <Blog_Resources />
       </motion.div>
@@ -72,7 +93,7 @@ const Services = () => {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
-        variants={matureFadeVariant}
+        variants={scaleVariant} // New scale animation for FAQ
       >
         <FAQ />
       </motion.div>
@@ -82,7 +103,7 @@ const Services = () => {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
-        variants={matureFadeVariant}
+        variants={fadeVariant}
       >
         <ContactUs />
       </motion.div>

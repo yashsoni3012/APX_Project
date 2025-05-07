@@ -8,22 +8,32 @@ import Roadmap from '../../pages/Home/Roadmap'
 import Tokenomics from '../../pages/Home/Tokenomics'
 import Impact from '../../pages/Home/Impact'
 import ContactUs from '../../pages/Home/ContactUs'
-// import Footer from '../Footer/Footer'
 
-const matureFadeVariant = {
-  hidden: {
-    opacity: 0,
-    y: 20,
-  },
-  visible: (i) => ({
+const fadeVariant = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
     opacity: 1,
     y: 0,
-    transition: {
-      delay: i * 0.1,
-      duration: 0.5,
-      ease: 'easeOut',
-    },
-  }),
+    transition: { duration: 0.4, ease: 'easeOut' },
+  },
+}
+
+const slideLeftVariant = {
+  hidden: { opacity: 0, x: -30 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.4, ease: 'easeOut' },
+  },
+}
+
+const slideRightVariant = {
+  hidden: { opacity: 0, x: 30 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.4, ease: 'easeOut' },
+  },
 }
 
 const Home = () => {
@@ -35,24 +45,35 @@ const Home = () => {
     <Roadmap />,
     <Tokenomics />,
     <Impact />,
-    <ContactUs />
-    // <Footer />
+    <ContactUs />,
   ]
 
   return (
     <div>
-      {sections.map((Section, index) => (
-        <motion.div
-          key={index}
-          custom={index}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-          variants={matureFadeVariant}
-        >
-          {Section}
-        </motion.div>
-      ))}
+      {sections.map((Section, index) => {
+        const ComponentType = Section.type
+        let variant = fadeVariant
+
+        if (ComponentType === Tech_Services) {
+          variant = slideLeftVariant
+        } else if (ComponentType === Tokenomics) {
+          variant = slideRightVariant
+        } else if (ComponentType === Impact || ComponentType === ContactUs) {
+          variant = fadeVariant // shared subtle fade-up
+        }
+
+        return (
+          <motion.div
+            key={index}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.15 }}
+            variants={variant}
+          >
+            {Section}
+          </motion.div>
+        )
+      })}
     </div>
   )
 }

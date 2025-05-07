@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import Blog_Resources from '../../assets/blog_resources.png';
 import Blog_Resources2 from '../../assets/blog_resources.png'; // Add unique images if available
 
@@ -64,6 +65,16 @@ const Ai_Services = () => {
       ? allCards
       : allCards.filter((card) => card.category === activeCategory);
 
+  // Animation variants for scroll-in effect
+  const fadeInVariant = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, ease: 'easeOut' },
+    },
+  };
+
   return (
     <div className="px-4 sm:px-6 lg:px-20 py-12 bg-white">
       <div className="max-w-7xl mx-auto mb-8 text-center">
@@ -86,8 +97,12 @@ const Ai_Services = () => {
 
       <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-8">
         {filteredCards.map((card, index) => (
-          <div
+          <motion.div
             key={index}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={fadeInVariant} // Apply fadeIn variant
             className="bg-white rounded-2xl shadow-md overflow-hidden flex flex-col border border-green-600"
           >
             <img
@@ -107,7 +122,7 @@ const Ai_Services = () => {
                 Read more →
               </a>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>
