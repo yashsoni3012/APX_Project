@@ -4,12 +4,12 @@ import contactImg from '../../assets/contact.png'; // Replace with your image pa
 const ContactForm = () => {
     return (
         <div className="bg-white py-10">
-            <div className="max-w-7xl mx-auto rounded-xl p-6 md:p-10 flex flex-col md:flex-row gap-10 items-center md:items-start justify-between">
+            <div className="max-w-7xl mx-auto rounded-xl px-4 sm:px-6 md:px-10 py-6 flex flex-col md:flex-row gap-10 items-center md:items-start justify-between">
 
                 {/* Left Side - Title + Image */}
-                <div className="w-full md:w-1/2 flex flex-col items-start justify-center">
-                    <h6 className="text-green-600 text-sm md:text-base mb-2 self-start">CONTACT US</h6>
-                    <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 md:mb-4 text-left">
+                <div className="w-full md:w-1/2 flex flex-col items-start">
+                    <h6 className="text-green-600 text-sm md:text-base mb-2">CONTACT US</h6>
+                    <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-left">
                         Reach out to us by<br />
                         filling the form
                     </h1>
@@ -18,8 +18,6 @@ const ContactForm = () => {
 
                 {/* Right Side - Form */}
                 <div className="w-full md:w-1/2">
-
-                    {/* Name, Email, Country, Phone - stacked with labels */}
                     <div className="flex flex-col gap-4 mb-6">
                         {/* Email */}
                         <div className="flex flex-col">
@@ -41,7 +39,7 @@ const ContactForm = () => {
                             />
                         </div>
 
-                        {/* Country and Phone - in one row */}
+                        {/* Country and Phone */}
                         <div className="flex flex-col sm:flex-row gap-4">
                             <div className="flex flex-col w-full">
                                 <label className="text-sm font-medium text-gray-700 mb-1">Country*</label>
@@ -59,7 +57,6 @@ const ContactForm = () => {
                                     <option value="France">France</option>
                                     <option value="Japan">Japan</option>
                                     <option value="Mexico">Mexico</option>
-                                    {/* Add more countries as needed */}
                                 </select>
                             </div>
                             <div className="flex flex-col w-full">
@@ -87,7 +84,6 @@ const ContactForm = () => {
                     <button className="bg-green-600 hover:bg-green-700 text-white w-full px-6 py-3 rounded text-sm font-semibold cursor-pointer">
                         Submit
                     </button>
-
                 </div>
             </div>
         </div>

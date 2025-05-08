@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from '../../assets/logo.png'; // Replace with your logo image path
 import { FaFacebookF, FaYoutube, FaTwitter, FaLinkedinIn } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
@@ -35,26 +36,28 @@ const Footer = () => {
                     {/* Column 2 - Some Information with Title */}
                     <div className="flex flex-col">
                         <h4 className="text-xl font-semibold mb-4">Company</h4>
-                        <p className="text-sm mb-5 relative cursor-pointer">
+                        <Link to="apx_token"><p className="text-sm mb-5 relative cursor-pointer">
                             <span className="hover:underline">APX Token</span>
-                        </p>
+                        </p></Link>
                         <p className="text-sm mb-5 relative cursor-pointer">
                             <span className="hover:underline">Join The Movement</span>
                         </p>
-                        <p className="text-sm mb-5 relative cursor-pointer">
+                        <Link to="/insights"><p className="text-sm mb-5 relative cursor-pointer">
                             <span className="hover:underline">Insights</span>
-                        </p>
+                        </p></Link>
                     </div>
 
                     {/* Column 3 - Contact Information */}
                     <div className="flex flex-col">
                         <h4 className="text-xl font-semibold mb-4">Company</h4>
-                        <p className="text-sm mb-5 relative cursor-pointer">
+
+                        <Link to="/"><p className="text-sm mb-5 relative cursor-pointer">
                             <span className="hover:underline">Home</span>
-                        </p>
-                        <p className="text-sm mb-5 relative cursor-pointer">
+                        </p></Link>
+
+                        <Link to="/aboutus"><p className="text-sm mb-5 relative cursor-pointer">
                             <span className="hover:underline">About Us</span>
-                        </p>
+                        </p></Link>
                         <p className="text-sm mb-5 relative cursor-pointer">
                             <span className="hover:underline">Contact Us</span>
                         </p>

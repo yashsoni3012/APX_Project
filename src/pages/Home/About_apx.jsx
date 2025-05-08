@@ -10,7 +10,7 @@ const About_apx = () => {
         >
             {/* Semi-transparent overlay */}
             <div className="bg-black/20 w-full h-full">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-2">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
 
                     {/* Heading */}
                     <div className="text-start mb-6">
@@ -20,23 +20,22 @@ const About_apx = () => {
 
                     {/* Content Section */}
                     <div className="py-10 flex flex-col md:flex-row items-center md:items-start gap-10">
-                        {/* Wider Image */}
-                        <div className="w-full md:w-1/2 flex justify-start">
+                        {/* Image Section */}
+                        <div className="w-full md:w-1/2 flex justify-center md:justify-start">
                             <img
                                 src={ApxImg2}
                                 alt="Overlay"
-                                className="w-[100%] max-w-2xl h-[350px] object-cover rounded-xl shadow-lg"
+                                className="w-full max-w-md h-auto md:h-[350px] object-cover rounded-xl shadow-lg"
                             />
                         </div>
 
-
-                        {/* Text */}
+                        {/* Text Section */}
                         <div className="w-full md:w-1/2 text-white">
-                            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-10 text-center md:text-left">
+                            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-center md:text-left">
                                 Mission Statement
                             </h2>
 
-                            <div className="w-30 h-[3px] bg-green-600 mb-10 mx-auto md:mx-0"></div>
+                            <div className="w-24 h-[3px] bg-green-600 mb-6 mx-auto md:mx-0"></div>
 
                             <h3 className="text-lg sm:text-xl md:text-2xl font-semibold italic text-center md:text-left mb-4">
                                 Blockchain-powered sustainable urban farming.
