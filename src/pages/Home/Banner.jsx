@@ -37,21 +37,21 @@ const Banner = () => {
       heading: 'AI-Powered Farming',
       subtext: 'Smart climate control, automated systems.',
       buttonText: 'Contact Us',
-      buttonLink: '/contact',
+      buttonLink: '',
     },
     {
       img: HomeBannerImg2,
       heading: 'Precision Agriculture',
       subtext: 'Harness data and technology to optimize yields.',
       buttonText: 'Learn More',
-      buttonLink: '/learn-more',
+      buttonLink: '',
     },
     {
       img: HomeBannerImg3,
       heading: 'Sustainable Farming Solutions',
       subtext: 'Reduce waste and maximize efficiency with AI.',
       buttonText: 'Get Started',
-      buttonLink: '/get-started',
+      buttonLink: '',
     },
   ];
 
@@ -78,7 +78,7 @@ const Banner = () => {
                 </p>
                 <Link
                   to={slide.buttonLink}
-                  className="bg-green-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-md hover:bg-green-700 transition"
+                  className="bg-green-00 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-md hover:bg-green-700 transition"
                 >
                   {slide.buttonText}
                 </Link>
