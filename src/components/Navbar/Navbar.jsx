@@ -28,7 +28,7 @@ const Navbar = () => {
                 <div className="hidden md:flex items-center space-x-10">
                     <Link to="/apx_token" className={`${isActive("/apx_token")} hover:text-green-400 transition`}>APX Token</Link>
                     <Link to="/nft" className={`${isActive("/nft")} hover:text-green-400 transition`}>NFT</Link>
-                    <Link to="/services" className={`${isActive("/services")} hover:text-green-400 transition`}>Services</Link>
+                    <Link to="/servicessss" className={`${isActive("/services")} hover:text-green-400 transition`}>Services</Link>
                     <Link to="/insights" className={`${isActive("/insights")} hover:text-green-400 transition`}>Insights</Link>
                     <Link to="/aboutus" className={`${isActive("/aboutus")} hover:text-green-400 transition`}>About Us</Link>
                     <Link to="/" className={`bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700 transition ${currentPath === "/" ? "ring-2 ring-white" : ""}`}>Contact Us</Link>

@@ -78,7 +78,7 @@ const Banner = () => {
                 </p>
                 <Link
                   to={slide.buttonLink}
-                  className="bg-green-00 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-md hover:bg-green-700 transition"
+                  className="bg-green-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-md hover:bg-green-700 transition"
                 >
                   {slide.buttonText}
                 </Link>
