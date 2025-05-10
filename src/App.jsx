@@ -21,7 +21,7 @@ const App = () => {
             <Route path='/' element={<Home />} />
             <Route path="/apx_token" element={<Apx_token />} />
             <Route path='/nft' element={<Nft />} />
-            <Route path="/services" element={<Services />} />
+            <Route path="/service" element={<Services />} />
             <Route path='/insights' element={<Insights />} />
             <Route path="/aboutus" element={<AboutUs />} />
           </Routes>

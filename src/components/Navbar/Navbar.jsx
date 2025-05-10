@@ -64,7 +64,7 @@ const Navbar = () => {
                         <Link to="/nft" onClick={closeMenu} className={`${isActive("/nft")} text-lg hover:text-green-400`}>NFT</Link>
                         <hr className="border-t border-white w-full" />
 
-                        <Link to="/services" onClick={closeMenu} className={`${isActive("/services")} text-lg hover:text-green-400`}>Services</Link>
+                        <Link to="/service" onClick={closeMenu} className={`${isActive("/services")} text-lg hover:text-green-400`}>Services</Link>
                         <hr className="border-t border-white w-full" />
 
                         <Link to="/insights" onClick={closeMenu} className={`${isActive("/insights")} text-lg hover:text-green-400`}>Insights</Link>
