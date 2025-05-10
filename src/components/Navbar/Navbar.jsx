@@ -74,12 +74,14 @@ const Navbar = () => {
                         <hr className="border-t border-white w-full" />
 
                         <Link
-                            to="/"
+                            to
                             onClick={closeMenu}
-                            className="bg-green-600 text-white text-center w-full py-2 mt-10 rounded-md hover:bg-green-700 transition"
+                            className="bg-green-600 text-white text-center w-full py-2 mt-10 rounded-md hover:bg-green-700 transition border-2 border-green-600 focus:outline-none focus:ring-0"
                         >
                             Contact Us
                         </Link>
+
+
 
                     </div>
                 </div>

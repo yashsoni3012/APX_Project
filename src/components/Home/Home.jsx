@@ -10,70 +10,59 @@ import Impact from '../../pages/Home/Impact'
 import ContactUs from '../../pages/Home/ContactUs'
 
 const fadeVariant = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { opacity: 0, y: 30 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.4, ease: 'easeOut' },
+    transition: { duration: 0.5, ease: 'easeOut' },
   },
 }
 
 const slideLeftVariant = {
-  hidden: { opacity: 0, x: -30 },
+  hidden: { opacity: 0, x: -40 },
   visible: {
     opacity: 1,
     x: 0,
-    transition: { duration: 0.4, ease: 'easeOut' },
+    transition: { duration: 0.5, ease: 'easeOut' },
   },
 }
 
 const slideRightVariant = {
-  hidden: { opacity: 0, x: 30 },
+  hidden: { opacity: 0, x: 40 },
   visible: {
     opacity: 1,
     x: 0,
-    transition: { duration: 0.4, ease: 'easeOut' },
+    transition: { duration: 0.5, ease: 'easeOut' },
   },
 }
 
 const Home = () => {
   const sections = [
-    <Banner />,
-    <Metrics />,
-    <About_apx />,
-    <Tech_Services />,
-    <Roadmap />,
-    <Tokenomics />,
-    <Impact />,
-    <ContactUs />,
+    { component: <Banner />, variant: fadeVariant },
+    { component: <Metrics />, variant: fadeVariant },
+    { component: <About_apx />, variant: fadeVariant },
+    { component: <Tech_Services />, variant: slideLeftVariant },
+    { component: <Roadmap />, variant: fadeVariant },
+    { component: <Tokenomics />, variant: slideRightVariant },
+    { component: <Impact />, variant: fadeVariant },
+    { component: <ContactUs />, variant: fadeVariant },
   ]
 
   return (
-    <div>
-      {sections.map((Section, index) => {
-        const ComponentType = Section.type
-        let variant = fadeVariant
-
-        if (ComponentType === Tech_Services) {
-          variant = slideLeftVariant
-        } else if (ComponentType === Tokenomics) {
-          variant = slideRightVariant
-        } else if (ComponentType === Impact || ComponentType === ContactUs) {
-          variant = fadeVariant // shared subtle fade-up
-        }
-
-        return (
+    <div className="overflow-x-hidden w-full max-w-full">
+      {sections.map((section, index) => (
+        <div key={index} className="overflow-x-hidden w-full max-w-full">
           <motion.div
-            key={index}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.15 }}
-            variants={variant}
+            viewport={{ once: true, amount: 0.3 }}
+            variants={section.variant}
+            className="w-full max-w-full"
           >
-            {Section}
+            {section.component}
           </motion.div>
-        )
-      })}
+        </div>
+      ))}
     </div>
   )
 }

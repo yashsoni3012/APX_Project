@@ -7,7 +7,7 @@ import blackberryImg from '../../assets/blackberry.png';
 import goldenberryImg from '../../assets/golden_berry.png';
 import mulberryImg from '../../assets/mulberry.png';
 
-const App = () => {
+const App = () => { 
   const sections = [
     {
       background: 'bg-green-600',
