@@ -28,7 +28,7 @@ const Navbar = () => {
                 <div className="hidden md:flex items-center space-x-10">
                     <Link to="/apx_token" className={`${isActive("/apx_token")} hover:text-green-400 transition`}>APX Token</Link>
                     <Link to="/nft" className={`${isActive("/nft")} hover:text-green-400 transition`}>NFT</Link>
-                    <Link to="/servicessss" className={`${isActive("/services")} hover:text-green-400 transition`}>Services</Link>
+                    <Link to="/services" className={`${isActive("/services")} hover:text-green-400 transition`}>Services</Link>
                     <Link to="/insights" className={`${isActive("/insights")} hover:text-green-400 transition`}>Insights</Link>
                     <Link to="/aboutus" className={`${isActive("/aboutus")} hover:text-green-400 transition`}>About Us</Link>
                     <Link to="/" className={`bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700 transition ${currentPath === "/" ? "ring-2 ring-white" : ""}`}>Contact Us</Link>
@@ -64,7 +64,7 @@ const Navbar = () => {
                         <Link to="/nft" onClick={closeMenu} className={`${isActive("/nft")} text-lg hover:text-green-400`}>NFT</Link>
                         <hr className="border-t border-white w-full" />
 
-                        <Link to="/service" onClick={closeMenu} className={`${isActive("/services")} text-lg hover:text-green-400`}>Services</Link>
+                        <Link to="/services" onClick={closeMenu} className={`${isActive("/services")} text-lg hover:text-green-400`}>Services</Link>
                         <hr className="border-t border-white w-full" />
 
                         <Link to="/insights" onClick={closeMenu} className={`${isActive("/insights")} text-lg hover:text-green-400`}>Insights</Link>
@@ -74,15 +74,12 @@ const Navbar = () => {
                         <hr className="border-t border-white w-full" />
 
                         <Link
-                            to
+                            to="/"
                             onClick={closeMenu}
                             className="bg-green-600 text-white text-center w-full py-2 mt-10 rounded-md hover:bg-green-700 transition border-2 border-green-600 focus:outline-none focus:ring-0"
                         >
                             Contact Us
                         </Link>
-
-
-
                     </div>
                 </div>
             </div>
