@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import contactImg from '../../assets/contact.png';
+import contactImg from '../../assets/contact.png'; // Make sure this path is correct
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -10,6 +10,8 @@ const ContactForm = () => {
     phone: '',
     message: ''
   });
+
+  const [fetchedUsers, setFetchedUsers] = useState([]);
 
   // Generate a unique user_id once per session
   const [userId] = useState(() => 'user_' + Math.random().toString(36).substr(2, 9));
@@ -21,7 +23,6 @@ const ContactForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Explicit payload structure
     const payload = {
       user_id: userId,
       email: formData.email,
@@ -46,7 +47,6 @@ const ContactForm = () => {
 
       alert('Form submitted successfully!');
       console.log('POST response:', response.data);
-      // Optionally reset form after success
       setFormData({ email: '', name: '', country: '', phone: '', message: '' });
     } catch (error) {
       alert('Error submitting form');
@@ -58,6 +58,7 @@ const ContactForm = () => {
     try {
       const response = await axios.get('https://apxtoken.pythonanywhere.com/user/');
       console.log('GET response:', response.data);
+      setFetchedUsers(response.data);
     } catch (error) {
       console.error('GET error:', error);
     }
@@ -168,6 +169,37 @@ const ContactForm = () => {
           </button>
         </form>
       </div>
+
+      {/* Table to show fetched users */}
+      {fetchedUsers.length > 0 && (
+        <div className="mt-12 max-w-7xl mx-auto px-4">
+          <h3 className="text-xl font-semibold mb-4">Submitted Users:</h3>
+          <div className="overflow-x-auto">
+            <table className="min-w-full border border-gray-300 text-sm">
+              <thead className="bg-gray-100">
+                <tr>
+                  <th className="border px-3 py-2 text-left">Name</th>
+                  <th className="border px-3 py-2 text-left">Email</th>
+                  <th className="border px-3 py-2 text-left">Country</th>
+                  <th className="border px-3 py-2 text-left">Phone</th>
+                  <th className="border px-3 py-2 text-left">Message</th>
+                </tr>
+              </thead>
+              <tbody>
+                {fetchedUsers.map((user, index) => (
+                  <tr key={index} className="border-t">
+                    <td className="border px-3 py-2">{user.name}</td>
+                    <td className="border px-3 py-2">{user.email}</td>
+                    <td className="border px-3 py-2">{user.country}</td>
+                    <td className="border px-3 py-2">{user.phone}</td>
+                    <td className="border px-3 py-2">{user.message}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
