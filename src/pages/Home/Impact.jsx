@@ -1,8 +1,29 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import impactImg from '../../assets/about_apx.png';
 import impactImg2 from '../../assets/impactImg.png';
 
 const Impact = () => {
+  // Left content animation: slide from left to right
+  const leftVariants = {
+    hidden: { opacity: 0, x: -100 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.8, ease: 'easeOut' },
+    },
+  };
+
+  // Right content animation: slide from right to left
+  const rightVariants = {
+    hidden: { opacity: 0, x: 100 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.8, ease: 'easeOut' },
+    },
+  };
+
   return (
     <div className="relative w-full bg-cover bg-center pt-10" style={{ backgroundImage: `url(${impactImg})` }}>
       <div className="bg-black/50 w-full h-full">
@@ -17,8 +38,14 @@ const Impact = () => {
           {/* Content Section */}
           <div className="flex flex-col md:flex-row items-center md:items-start gap-10 py-10">
 
-            {/* Text Section */}
-            <div className="w-full md:w-1/2 text-white">
+            {/* Left Text Section with animation */}
+            <motion.div
+              className="w-full md:w-1/2 text-white"
+              variants={leftVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+            >
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-center md:text-left">
                 Sustainability Metrics
               </h2>
@@ -41,16 +68,23 @@ const Impact = () => {
               <h3 className="text-xs font-normal text-center md:text-left">
                 Over 2,500 local employment opportunities.
               </h3>
-            </div>
+            </motion.div>
 
-            {/* Image Section */}
-            <div className="w-full md:w-1/2 flex justify-center">
+            {/* Right Image Section with animation */}
+            <motion.div
+              className="w-full md:w-1/2 flex justify-center"
+              variants={rightVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+            >
               <img
                 src={impactImg2}
                 alt="Overlay"
                 className="w-full max-w-xl h-auto object-cover rounded-xl shadow-lg"
               />
-            </div>
+            </motion.div>
+
           </div>
 
         </div>

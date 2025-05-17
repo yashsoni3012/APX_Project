@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import Img1 from '../../assets/ai_farming.png';
 import Img2 from '../../assets/blockchain.png';
 import Img3 from '../../assets/nft-based.png';
@@ -28,6 +29,20 @@ const CardSection = () => {
         },
     ];
 
+    // Animation variants for sliding text from left to right
+    const textVariants = {
+        hidden: { opacity: 0, x: -100 },
+        visible: (i) => ({
+            opacity: 1,
+            x: 0,
+            transition: {
+                delay: i * 0.3,  // stagger by index for nice sequential effect
+                duration: 0.3,
+                ease: 'easeOut',
+            },
+        }),
+    };
+
     return (
         <div className="px-4 sm:px-6 lg:px-20 py-12 bg-white">
             <div className="max-w-7xl mx-auto text-start mb-10">
@@ -51,7 +66,16 @@ const CardSection = () => {
                                 className="w-full h-full object-cover"
                             />
                         </div>
-                        <div className="p-5 flex flex-col flex-1">
+
+                        {/* Animated text content */}
+                        <motion.div
+                            className="p-5 flex flex-col flex-1"
+                            custom={index}
+                            variants={textVariants}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true, amount: 0.3 }}
+                        >
                             <h3 className="text-lg sm:text-xl font-bold mb-2">{card.title}</h3>
                             <p className="text-sm text-gray-800 mb-4">{card.description}</p>
                             <a
@@ -60,7 +84,7 @@ const CardSection = () => {
                             >
                                 Read More →
                             </a>
-                        </div>
+                        </motion.div>
                     </div>
                 ))}
             </div>
