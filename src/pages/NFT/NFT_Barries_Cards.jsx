@@ -47,8 +47,27 @@ const App = () => {
     },
   ];
 
+  // Animation variants for sliding text
+  const leftSlide = {
+    hidden: { opacity: 0, x: 100 }, // from right to left
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.5, ease: 'easeOut' },
+    },
+  };
+
+  const rightSlide = {
+    hidden: { opacity: 0, x: -100 }, // from left to right
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.5, ease: 'easeOut' },
+    },
+  };
+
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 overflow-x-hidden">
       {sections.map((section, index) => {
         const layoutClass = index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse';
 
@@ -58,19 +77,14 @@ const App = () => {
           ? 'bg-black hover:bg-gray-800 text-white py-3 px-6 min-w-[300px] rounded-lg'
           : 'bg-green-600 hover:bg-green-700 text-white py-3 px-6 min-w-[300px] rounded-lg';
 
-        // Set animation properties based on section index
-        const motionProps = {
-          initial: { opacity: 0, x: index % 2 === 0 ? -100 : 100 }, // Slide from left or right
-          whileInView: { opacity: 1, x: 0 }, // Fade in and reset position
-          transition: { type: 'spring', stiffness: 100, duration: 0.8 }, // Transition settings
-          viewport: { once: true, amount: 0.2 }, // Trigger when 20% of the element is visible
-        };
+        // For left side (even index), slide from right to left (leftSlide)
+        // For right side (odd index), slide from left to right (rightSlide)
+        const textVariant = index % 2 === 0 ? leftSlide : rightSlide;
 
         return (
-          <motion.div
+          <div
             key={index}
             className={`w-full flex flex-col ${layoutClass} items-center ${section.background} rounded-3xl text-white`}
-            {...motionProps}
           >
             {/* Image Section */}
             <div className="w-full h-64 md:w-1/2 md:h-[400px]">
@@ -81,9 +95,15 @@ const App = () => {
               />
             </div>
 
-            {/* Text Section */}
-            <div className="w-full md:w-1/2 flex flex-col justify-center items-center p-4 sm:p-6 space-y-4 text-center">
-              <p className="text-xs font-semibold tracking-widest uppercase text-white  w-full sm:text-start max-w-7xl">
+            {/* Text Section with animation */}
+            <motion.div
+              className="w-full md:w-1/2 flex flex-col justify-center items-center p-4 sm:p-6 space-y-4 text-center"
+              variants={textVariant}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false, amount: 0.2 }}
+            >
+              <p className="text-xs font-semibold tracking-widest uppercase text-white w-full sm:text-start max-w-7xl">
                 AI FUTURE
               </p>
 
@@ -97,8 +117,8 @@ const App = () => {
               >
                 Buy Now
               </button>
-            </div>
-          </motion.div>
+            </motion.div>
+          </div>
         );
       })}
     </div>

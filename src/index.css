@@ -7,3 +7,26 @@ body, html {
     overflow-x: hidden;
   }
   
+  @keyframes dropIn {
+  0% {
+    clip-path: inset(100% 0 0 0);
+    opacity: 0;
+  }
+  50% {
+    clip-path: inset(0 0 0 0);
+    opacity: 1;
+  }
+  90% {
+    clip-path: inset(0 0 0 0);
+    opacity: 1;
+  }
+  100% {
+    clip-path: inset(100% 0 0 0);
+    opacity: 0;
+  }
+}
+
+.animate-dropIn {
+  animation: dropIn 2s ease-in-out infinite;
+  white-space: nowrap;
+}

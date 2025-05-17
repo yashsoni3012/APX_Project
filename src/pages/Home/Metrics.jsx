@@ -2,6 +2,7 @@ import React from "react";
 import { FaHome, FaCity, FaLeaf } from "react-icons/fa";
 import { motion } from "framer-motion";
 
+// Animation variants
 const containerVariants = {
   hidden: {},
   visible: {
@@ -35,13 +36,13 @@ const IconRow = () => {
         <h3 className="text-black text-2xl md:text-3xl font-semibold mt-2">Quick Status</h3>
       </div>
 
-      {/* Icon Row */}
+      {/* Icon Row with animation */}
       <motion.div
         className="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center sm:items-stretch justify-between gap-8"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.1 }}
+        viewport={{ once: false, amount: 0.3 }} // 👈 Triggers on every scroll into view
       >
         {icons.map((item, idx) => (
           <motion.div

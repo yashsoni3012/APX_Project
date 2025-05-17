@@ -44,7 +44,7 @@ const Impact = () => {
               variants={leftVariants}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
+              viewport={{ once: false, amount: 0.3 }} // 👈 retriggers on scroll
             >
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-center md:text-left">
                 Sustainability Metrics
@@ -76,7 +76,7 @@ const Impact = () => {
               variants={rightVariants}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
+              viewport={{ once: false, amount: 0.3 }} // 👈 retriggers on scroll
             >
               <img
                 src={impactImg2}

@@ -4,7 +4,6 @@ import ApxImg from '../../assets/about_apx.png';
 import ApxImg2 from '../../assets/about_apx_2.png';
 
 const About_apx = () => {
-  // Variants for sliding in from left (image)
   const imageVariants = {
     hidden: { opacity: 0, x: -100 },
     visible: {
@@ -14,7 +13,6 @@ const About_apx = () => {
     },
   };
 
-  // Variants for sliding in from right (text)
   const textVariants = {
     hidden: { opacity: 0, x: 100 },
     visible: {
@@ -29,7 +27,6 @@ const About_apx = () => {
       className="relative w-full bg-cover bg-center pt-10"
       style={{ backgroundImage: `url(${ApxImg})` }}
     >
-      {/* Semi-transparent overlay */}
       <div className="bg-black/20 w-full h-full">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
           {/* Heading */}
@@ -46,7 +43,7 @@ const About_apx = () => {
               variants={imageVariants}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
+              viewport={{ once: false, amount: 0.3 }} // 👈 Changed to false
             >
               <img
                 src={ApxImg2}
@@ -61,7 +58,7 @@ const About_apx = () => {
               variants={textVariants}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
+              viewport={{ once: false, amount: 0.3 }} // 👈 Changed to false
             >
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-center md:text-left">
                 Mission Statement

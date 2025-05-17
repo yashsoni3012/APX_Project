@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import Blog_Resources from '../../assets/blog_resources.png';
-import Blog_Resources2 from '../../assets/blog_resources.png'; // Add unique images if available
+import Blog_Resources2 from '../../assets/blog_resources.png'; // Use different images if needed
 
 const Ai_Services = () => {
   const allCards = [
@@ -65,18 +65,21 @@ const Ai_Services = () => {
       ? allCards
       : allCards.filter((card) => card.category === activeCategory);
 
-  // Animation variants for scroll-in effect
-  const fadeInVariant = {
-    hidden: { opacity: 0, y: 20 },
+  const textVariant = {
+    hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.5, ease: 'easeOut' },
+      transition: {
+        duration: 0.6,
+        ease: 'easeOut',
+      },
     },
   };
 
   return (
     <div className="px-4 sm:px-6 lg:px-20 py-12 bg-white">
+      {/* Category Buttons */}
       <div className="max-w-7xl mx-auto mb-8 text-center">
         <div className="flex flex-wrap justify-center gap-3">
           {categories.map((category) => (
@@ -95,14 +98,11 @@ const Ai_Services = () => {
         </div>
       </div>
 
+      {/* Cards Grid */}
       <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-8">
         {filteredCards.map((card, index) => (
-          <motion.div
+          <div
             key={index}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            variants={fadeInVariant} // Apply fadeIn variant
             className="bg-white rounded-2xl shadow-md overflow-hidden flex flex-col border border-green-600"
           >
             <img
@@ -110,7 +110,14 @@ const Ai_Services = () => {
               alt={card.title}
               className="w-full h-[200px] object-cover"
             />
-            <div className="p-5 flex flex-col flex-1">
+
+            <motion.div
+              className="p-5 flex flex-col flex-1"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false, amount: 0.3 }}
+              variants={textVariant}
+            >
               <h3 className="text-xl font-semibold mb-2 text-black">
                 {card.title}
               </h3>
@@ -121,8 +128,8 @@ const Ai_Services = () => {
               >
                 Read more →
               </a>
-            </div>
-          </motion.div>
+            </motion.div>
+          </div>
         ))}
       </div>
     </div>

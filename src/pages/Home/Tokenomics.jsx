@@ -20,7 +20,7 @@ const ThreeHorizontalCards = () => {
     },
   ];
 
-  // Variants for text sliding from top to down
+  // Text sliding from top to bottom
   const textVariants = {
     hidden: { opacity: 0, y: -50 },
     visible: {
@@ -30,7 +30,7 @@ const ThreeHorizontalCards = () => {
     },
   };
 
-  // Variants for cards sliding from bottom to up
+  // Cards sliding from bottom to top with stagger
   const cardsVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: (i = 1) => ({
@@ -52,7 +52,7 @@ const ThreeHorizontalCards = () => {
         variants={textVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
+        viewport={{ once: false, amount: 0.3 }} // 🔁 retrigger animation on scroll
       >
         <h6 className="text-green-700 text-sm md:text-base">APX TOKEN</h6>
         <h1 className='text-black text-3xl md:text-4xl font-bold mt-4'>Tokenomics & Rewards</h1>
@@ -72,7 +72,7 @@ const ThreeHorizontalCards = () => {
               variants={cardsVariants}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
+              viewport={{ once: false, amount: 0.3 }} // 🔁 retrigger on re-scroll
             >
               <img
                 src={card.image}
