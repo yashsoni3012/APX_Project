@@ -12,18 +12,18 @@ const Footer = () => {
                     <div className="flex flex-col items-center">
                         <img src={logo} alt="Logo" className="mb-2 w-28 h-auto" /> {/* Reduced size and mb */}
                         <p className="text-white mb-2 text-sm font-bold">Follow us on:</p>
-                        <div className="flex space-x-3 justify-center"> {/* Reduced spacing */}
-                            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-400">
-                                <FaFacebookF size={18} />
+                        <div className="flex space-x-3 justify-center cursor-pointer"> {/* Reduced spacing */}
+                            <a href target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-400">
+                                <FaFacebookF size={20} />
                             </a>
-                            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-400">
-                                <FaYoutube size={18} />
+                            <a href target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-400">
+                                <FaYoutube size={20} />
                             </a>
-                            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-400">
-                                <FaTwitter size={18} />
+                            <a href target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-400">
+                                <FaTwitter size={20} />
                             </a>
-                            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-400">
-                                <FaLinkedinIn size={18} />
+                            <a href target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-400">
+                                <FaLinkedinIn size={20} />
                             </a>
                         </div>
                     </div>

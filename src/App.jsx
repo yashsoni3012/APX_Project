@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./components/Home/Home";
 import Apx_token from "./components/APX_Token/Apx_token";
@@ -21,6 +24,15 @@ const App = () => {
     }, 1000);
 
     return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    // Initialize AOS animations
+    AOS.init({
+      duration: 800,
+      once: true,
+      easing: "ease-in-out",
+    });
   }, []);
 
   // Show spinner while loading

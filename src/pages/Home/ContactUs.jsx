@@ -1,3 +1,5 @@
+// src/components/ContactForm.jsx
+
 import React, { useState } from 'react';
 import axios from 'axios';
 import contactImg from '../../assets/contact.png'; // Make sure this path is correct
@@ -12,8 +14,6 @@ const ContactForm = () => {
   });
 
   const [fetchedUsers, setFetchedUsers] = useState([]);
-
-  // Generate a unique user_id once per session
   const [userId] = useState(() => 'user_' + Math.random().toString(36).substr(2, 9));
 
   const handleChange = (e) => {
@@ -25,14 +25,8 @@ const ContactForm = () => {
 
     const payload = {
       user_id: userId,
-      email: formData.email,
-      name: formData.name,
-      country: formData.country,
-      phone: formData.phone,
-      message: formData.message
+      ...formData
     };
-
-    console.log('Submitting payload:', payload);
 
     try {
       const response = await axios.post(
@@ -47,6 +41,7 @@ const ContactForm = () => {
 
       alert('Form submitted successfully!');
       console.log('POST response:', response.data);
+
       setFormData({ email: '', name: '', country: '', phone: '', message: '' });
     } catch (error) {
       alert('Error submitting form');
@@ -57,7 +52,6 @@ const ContactForm = () => {
   const handleGetData = async () => {
     try {
       const response = await axios.get('https://apxtoken.pythonanywhere.com/user/');
-      console.log('GET response:', response.data);
       setFetchedUsers(response.data);
     } catch (error) {
       console.error('GET error:', error);
@@ -66,7 +60,7 @@ const ContactForm = () => {
 
   return (
     <div className="bg-white py-10">
-      <div className="max-w-7xl mx-auto rounded-xl px-4 sm:px-6 md:px-10 py-6 flex flex-col md:flex-row gap-10 items-center md:items-start justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 py-6 flex flex-col md:flex-row gap-10 items-center md:items-start justify-between">
         {/* Left Side */}
         <div className="w-full md:w-1/2 flex flex-col items-start">
           <h6 className="text-green-600 text-sm md:text-base mb-2">CONTACT US</h6>
