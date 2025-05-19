@@ -30,3 +30,18 @@ body, html {
   animation: dropIn 2s ease-in-out infinite;
   white-space: nowrap;
 }
+
+/* Hide scrollbar for Chrome, Safari, Opera */
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for Firefox */
+body {
+  scrollbar-width: none;
+}
+
+/* Optional: Prevent horizontal scroll just in case */
+body {
+  overflow-x: hidden;
+}
