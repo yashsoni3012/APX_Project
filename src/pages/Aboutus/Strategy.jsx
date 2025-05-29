@@ -24,7 +24,7 @@ const TwoColumnLayout = () => {
       >
         <div>
           <motion.h6
-            className="text-green-700 text-sm sm:text-base mb-2"
+            className="text-green-600 text-sm sm:text-base mb-2"
             variants={slideInFromLeft(0)}
           >
             Strategy
@@ -53,7 +53,6 @@ const TwoColumnLayout = () => {
             3. Rewards - Investors earn through yields, carbon credits, and token incentives sustainably.
           </motion.p>
         </div>
-
         <motion.button
           className="mt-8 bg-green-600 text-white py-3 px-12 sm:px-16 rounded-md font-semibold hover:bg-green-700 transition-colors w-full sm:w-auto"
           variants={slideInFromLeft(0.3)}

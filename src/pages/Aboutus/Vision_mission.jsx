@@ -1,6 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import logo from '../../assets/logo.png'; // Replace with your actual logo path
+import visionImg from '../../assets/visionImg.png'; // Replace with your actual vision image path
+import missionImg from '../../assets/missionImg.png'; // Replace with your actual mission image path
 
 const fadeInUp = (delay = 0) => ({
   hidden: { opacity: 0, y: 20 },
@@ -33,7 +35,7 @@ const MissionVisionSection = () => {
         </motion.h2>
 
         <motion.img
-          src={logo}
+          src={visionImg}
           alt="Mission Logo"
           className="w-20 h-auto mb-4"
           variants={fadeInUp(0.4)}
@@ -67,7 +69,7 @@ const MissionVisionSection = () => {
         </motion.h2>
 
         <motion.img
-          src={logo}
+          src={missionImg}
           alt="Vision Logo"
           className="w-20 h-auto mb-4"
           variants={fadeInUp(0.4)}
